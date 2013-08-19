@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Install sbt in the data dir
+cd $OPENSHIFT_DATA_DIR
+
+if [[ -d sbt ]]; then
+  echo "SBT already installed"
+else
+  curl sbt.tgz http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.2/sbt.tgz | tar xvz sbt
+fi
+

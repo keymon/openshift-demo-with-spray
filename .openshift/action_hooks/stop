@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -z "$(ps -ef | grep spray-template-fat.jar | grep -v grep)" ]
+then
+    client_result "Application is already stopped"
+else
+    kill `ps -ef | grep spray-template-fat.jar | grep -v grep | awk '{ print $2 }'` > /dev/null 2>&1
+fi
+
